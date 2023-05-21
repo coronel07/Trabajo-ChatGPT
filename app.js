@@ -1,15 +1,2 @@
-const slider = document.querySelector(".slider");
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
-
-let translateXValue = 0;
-
-prevButton.addEventListener("click", () => {
-	translateXValue += 100;
-	slider.style.transform = `translateX(${translateXValue}%)`;
-});
-
-nextButton.addEventListener("click", () => {
-	translateXValue -= 100;
-	slider.style.transform = `translateX(${translateXValue}%)`;
-});
+/*NO ANDA NADA SI PONES LOS SCRIPTS QUE MODIFIQUEN COSAS DEL EJS ACA NO SE PORQUE VAYA,
+HAY Q PONERLOS EN EL INDEX.EJS LAMENTABLEMENTE, HAY Q PREGUNTARLE A ALGÚN PROFE O NO SE*/

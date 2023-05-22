@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.get("/test", (req, res) => {
-	res.render("index");
+	res.render("index", {respuesta: null});
 });
 
 // Importamos y configuramos el cliente OpenAI API
@@ -36,15 +36,13 @@ const openai = new OpenAIApi(configuration);
 // Definimos el prompt
 const conversationContextPrompt = "información de Messi";
 
-// Defining an endpoint to handle incoming requests
 app.post("/test", (req, res) => {
-	// Extracting the user's message from the request body
 	const message = req.body.message;
 	// LLamando a la API de OpenAI
 	openai
 		.createCompletion({
 			model: "text-davinci-003",
-			// Agregamos a la conversación el mesansaje en cuestión
+			// Agregamos a la conversación el mensaje en cuestión
 			prompt: conversationContextPrompt + message,
 			temperature: 0.9,
 			max_tokens: 150,
@@ -54,10 +52,15 @@ app.post("/test", (req, res) => {
 			stop: [" Human:", " AI:"],
 		})
 		.then((response) => {
-			// Sending the response data back to the client
-			res.send(response.data.choices);
+			const resp = response.data.choices[0].text;
+			res.render("index", { respuesta: resp });
+		})
+		.catch((error) => {
+			console.error(error);
+			// Manejar el error aquí y enviar una respuesta adecuada al cliente
 		});
 });
+
 
 // Escuchamos en el puerto correspondiente
 app.listen(2500, () => {

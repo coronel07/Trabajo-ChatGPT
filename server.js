@@ -33,32 +33,50 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+//Parámetros de la API
+let temperature = 0.9;
+let max_tokens = 150;
+let top_p = 1;
+let frequency_penalty = 0;
+let presence_penalty = 0.6;
+
 // Definimos el prompt
-const conversationContextPrompt = "información de Messi";
+const conversationContextPrompt = "";
 
 app.post("/test", (req, res) => {
 	const message = req.body.message;
 	// LLamando a la API de OpenAI
 	openai
-		.createCompletion({
-			model: "text-davinci-003",
-			// Agregamos a la conversación el mensaje en cuestión
-			prompt: conversationContextPrompt + message,
-			temperature: 0.9,
-			max_tokens: 150,
-			top_p: 1,
-			frequency_penalty: 0,
-			presence_penalty: 0.6,
-			stop: [" Human:", " AI:"],
-		})
-		.then((response) => {
-			const resp = response.data.choices[0].text;
-			res.render("index", { respuesta: resp });
-		})
-		.catch((error) => {
-			console.error(error);
-			// Manejar el error aquí y enviar una respuesta adecuada al cliente
-		});
+	.createCompletion({
+		model: "text-davinci-003",
+		// Agregamos a la conversación el mensaje en cuestión
+		prompt: conversationContextPrompt + message,
+		temperature,
+		max_tokens,
+		top_p,
+		frequency_penalty,
+		presence_penalty,
+		stop: [" Human:", " AI:"],
+	})
+	.then((response) => {
+		const resp = response.data.choices[0].text;
+		res.render("index", { respuesta: resp });
+	})
+	.catch((error) => {
+		console.error(error);
+		// Manejar el error aquí y enviar una respuesta adecuada al cliente
+	});
+});
+
+app.post("/test", (req, res) => {
+	const { value1, value2, value3, value4, value5 } = req.body;
+	temperature = parseFloat(value1);
+    max_tokens = parseInt(value2);
+    top_p = parseFloat(value3);
+    frequency_penalty = parseFloat(value4);
+    presence_penalty = parseFloat(value5);
+	res.json({ message: "Respuesta generada con los nuevos parámetros" })
+	console.log("funcionaSupongo")
 });
 
 

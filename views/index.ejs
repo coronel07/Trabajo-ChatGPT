@@ -144,6 +144,18 @@
 			<% } %>
 
 	</div>
+	<img class="logo" src="img/logo.png" onclick="mostrarParticipantes()">
+    <div id="cuadroParticipantes" class="oculto">
+        <h2>Participantes:</h2>
+        <ul id="listaParticipantes">
+            <li>Nombre 1</li>
+            <li>Nombre 2</li>
+            <li>Nombre 3</li>
+            <!-- Agrega los nombres de los participantes según tus necesidades -->
+        </ul>
+    </div>
+
+
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			let slider1 = document.getElementById("mySlider1");
@@ -196,6 +208,12 @@
 
 			output5.innerHTML = slider5.value;
 		});
+
+		function mostrarParticipantes() {
+			var cuadro = document.getElementById("cuadroParticipantes");
+			cuadro.classList.toggle("oculto");
+		}
+		
 	</script>
 </body>
 

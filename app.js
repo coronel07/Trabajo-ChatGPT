@@ -99,3 +99,8 @@ function saveSliderValues() {
 
 // Escucha el evento 'click' en el botón para guardar los valores
 saveValuesBtn.addEventListener("click", saveSliderValues);
+
+function mostrarParticipantes() {
+    var cuadro = document.getElementById("cuadroParticipantes");
+    cuadro.classList.toggle("oculto");
+}

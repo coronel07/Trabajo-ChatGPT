@@ -100,7 +100,17 @@ function saveSliderValues() {
 // Escucha el evento 'click' en el botón para guardar los valores
 saveValuesBtn.addEventListener("click", saveSliderValues);
 
+//Para mostrar los participantes
 function mostrarParticipantes() {
     var cuadro = document.getElementById("cuadroParticipantes");
     cuadro.classList.toggle("oculto");
+    cuadroParticipantes.style.display = 'block';
 }
+
+//Para que cuando se toque el botón de cerrar se cierre la lista de participantes.
+const closeButton = document.querySelector('.closeBtn');
+const cuadroParticipantes = document.querySelector('#cuadroParticipantes');
+
+closeButton.addEventListener('click', function() {
+    cuadroParticipantes.style.display = 'none';
+});

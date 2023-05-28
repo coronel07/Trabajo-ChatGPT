@@ -45,8 +45,8 @@
 				</div>
 				<li><a href="#" class="dropdown-item">Max tokens</a></li>
 				<div class="container">
-					<input type="range" class="custom-range" min="1" max="200" id="mySlider2" value="150">
-					<span id="sliderValue2">150</span>
+					<input type="range" class="custom-range" min="1" max="999" id="mySlider2" value="380">
+					<span id="sliderValue2">380</span>
 				</div>
 				<li><a href="#" class="dropdown-item">Top p</a></li>
 				<div class="container">
@@ -88,21 +88,26 @@
 	</form>
 	<h2>Respuesta:</h2>
 	<% if (respuesta) { %>
-		<p>
+		<p class="response">
 			<%= respuesta %>
 		</p>
 		<% } %>
 		
 	<img class="logo" src="img/logo.png" onclick="mostrarParticipantes()">
 	<div id="cuadroParticipantes" class="oculto">
+		<div class="headerContainer">
 		<h2>Participantes:</h2>
+		<div class="divCloseBtn">
+			<button type="button" class="closeBtn btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		</div>
 		<ul id="listaParticipantes">
-			<li>Arce Joaquín</li>
-			<li>Ariza Marcos</li>
-			<li>Coronel Nicolas</li>
-			<li>Masante Juan Cruz</li>
-			<li>Michel Paul</li>
-			<li>Silveyra Fabricio</li>
+			<li><span class="item">•</span> Arce Joaquín</li>
+			<li><span class="item">•</span> Ariza Marcos</li>
+			<li><span class="item">•</span> Coronel Nicolás</li>
+			<li><span class="item">•</span> Masante Juan Cruz</li>
+			<li><span class="item">•</span> Michel Paul</li>
+			<li><span class="item">•</span> Silveyra Fabricio</li>
 		</ul>
 	</div>
 <script src="../app.js"></script>

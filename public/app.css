@@ -47,17 +47,17 @@ h1 {
 
 .sliders-container {
     display: flex;
-  }
-  
+}
+
 .sliders-left {
     display: flex;
     flex-direction: column;
-  }
-  
+}
+
 .siders-right {
     display: flex;
     flex-direction: column;
-  }
+}
 
 .custom-range {
     width: 100%;
@@ -113,6 +113,7 @@ p {
     /* ajusta el tamaño según tus necesidades */
     cursor: pointer;
 }
+
 .oculto {
     display: none;
 }
@@ -133,4 +134,21 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+}
+
+.divCloseBtn {
+    margin-left: 10px;
+}
+
+.item {
+    margin-right: 5px;
+}
+
+.response{
+    border-radius: 10px;
 }

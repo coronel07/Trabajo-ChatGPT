@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Hola, bienvenido a Chat-bot</h1>
+		<h1 style = "color: rgb(0, 0, 0)">Hola, bienvenido a Chat-bot</h1>
 		
 		<button class="btn btn-primary custom-button" type="button" data-bs-toggle="offcanvas"
 		data-bs-target="#offcanvas" aria-controls="offcanvas">
@@ -25,7 +25,7 @@
 			aria-label="Close"></button>
 		</div>
 		<div class="offcanvas-body">
-			<div>
+			<div style ="color:black" class = "offcanvas-text">
 				En este menú podrás ajustar todos los parámetros del Chat-Bot a tu gusto. Los parámetros que están
 				ya puestos son los recomendables.
 			</div>
@@ -35,6 +35,8 @@
 				Parámetros disponibles
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+			<div class = "sliders-container">
+			<div class ="left-sliders">
 				<li><a href="#" class="dropdown-item">Temperature</a></li>
 				<div class="container">
 					<input type="range" class="custom-range" min="0" max="1" step="0.1" id="mySlider1"
@@ -52,6 +54,8 @@
 					value="1">
 					<span id="sliderValue3">1</span>
 				</div>
+			</div>
+			<div class = "sliders-right">
 				<li><a href="#" class="dropdown-item">Frequency penalty</a></li>
 				<div class="container">
 					<input type="range" class="custom-range" min="0" max="1" step="0.1" id="mySlider4"
@@ -64,6 +68,8 @@
 					value="0.6">
 					<span id="sliderValue5">0.6</span>
 				</div>
+			</div>
+			</div>	
 				<div class="text-center">
 					<button class="btn btn-primary" id="save-values-btn" type="submit" value="Submit">Guardar
 						valores</button>

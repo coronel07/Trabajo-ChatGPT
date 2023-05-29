@@ -1,6 +1,6 @@
 /* styles.css */
-body {
-    font-family: Arial, sans-serif;
+.body {
+    font-family: 'Comfortaa';
     background: rgb(102,96,198);
     background: linear-gradient(90deg, rgba(102,96,198,1) 0%, rgba(103,103,213,1) 23%, rgba(48,128,236,1) 73%, rgba(0,212,255,1) 100%);;
     /*background-image: url('img/fondo-chatbot.jpg');*/
@@ -13,7 +13,6 @@ body {
 }
 
 h1 {
-    color: white;
     text-align: center;
     margin-bottom: 20px;
     

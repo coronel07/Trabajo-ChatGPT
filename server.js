@@ -44,7 +44,7 @@ const openai = new OpenAIApi(configuration);
 
 //Parámetros de la API
 let temperature = 0.9;
-let max_tokens = 150;
+let max_tokens = 380;
 let top_p = 1;
 let frequency_penalty = 0;
 let presence_penalty = 0.6;
